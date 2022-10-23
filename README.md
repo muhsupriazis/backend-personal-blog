@@ -1,10 +1,8 @@
 # RestFull API
 
-## Personal Blog
+## Auth API
 
-### Auth API
-
-#### findAllBlogs
+### findAllBlogs
 `findAllBlogs` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs`
@@ -37,7 +35,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 ]
 ```
 
-#### findBlogById
+### findBlogById
 `findBlogById` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs/:id`
@@ -59,7 +57,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 }
 ```
 
-#### findBlogCount
+### findBlogCount
 `findBlogCount` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs/:count`
@@ -92,7 +90,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 ]
 ```
 
-#### saveBlog
+### saveBlog
 `saveBlog` adalah function yang digunakan untuk menghandle `REQUEST` method `POST` 
 
 `{BASE_URL}/api/blogs`
@@ -107,7 +105,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 }
 ```
 
-#### updateBlog
+### updateBlog
 `updateBlog` adalah function yang digunakan untuk menghandle `REQUEST` method `POST` 
 
 `{BASE_URL}/api/blogs`
@@ -122,7 +120,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 }
 ```
 
-#### deleteBlog
+### deleteBlog
 `deleteBlog` adalah function yang digunakan untuk menghandle `REQUEST` method `DELETE` 
 
 `{BASE_URL}/api/blogs/:id`
@@ -137,9 +135,9 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 }
 ```
 
-### Public API
+## Public API
 
-#### findAllBlogs
+### findAllBlogs
 `findAllBlogs` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs`
@@ -172,7 +170,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 ]
 ```
 
-#### findBlogById
+### findBlogById
 `findBlogById` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs/:id`
@@ -194,7 +192,7 @@ Function ini akan mengembalikan `RESPONSE` berupa object
 }
 ```
 
-#### findBlogCount
+### findBlogCount
 `findBlogCount` adalah function yang digunakan untuk menghandle `REQUEST` method `GET` 
 
 `{BASE_URL}/api/blogs/:count`
