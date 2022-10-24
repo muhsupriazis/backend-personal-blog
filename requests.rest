@@ -1,1 +1,17 @@
+
 GET http://localhost:5000/api/user
+
+###
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+    "username": "muhsupriazis",
+    "password": "admin",
+    "confirm": "admin"
+}
+
+###
+DELETE  http://localhost:5000/api/user/635690ae0873e654c20d0640
+
+

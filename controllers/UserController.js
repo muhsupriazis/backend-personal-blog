@@ -10,3 +10,34 @@ export const getUser = async(req, res)=>{
         })   
     }
 }
+
+export const postUser = async (req, res)=>{
+    try {
+        if(req.body.password != req.body.confirm) return res.status(400).json({
+            message: 'Confirm failed'
+        })
+        const user = new User({
+            username: req.body.username,
+            password: req.body.password,
+        })
+        await user.save()
+        res.status(201).json({
+            message: 'Successfully save data'
+        })
+    } catch (error) {
+        res.send({
+            message: error.message
+        })
+    }
+}
+
+export const deleteUser = async(req, res)=>{
+    try {
+        await User.deleteOne({_id: req.params.id})
+        res.status(202).json({
+            message: 'successful delete user'
+        })
+    } catch (error) {
+        
+    }
+}
