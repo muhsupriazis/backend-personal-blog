@@ -1,17 +1,30 @@
 
 GET http://localhost:5000/api/user
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU2YjFkMjMzY2IwYTkxZmJmNGQ4YTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtdWhzdXByaWF6aXNAZ21haWwuY29tIiwiaWF0IjoxNjY2NjI4ODI2LCJleHAiOjE2NjY2Mjg4NDF9.nbsczEZoaIIq7q_kxovA-5LujWe_J0tLmZWBoO6nM3o
 ###
 POST http://localhost:5000/api/user
 Content-Type: application/json
 
 {
-    "username": "muhsupriazis",
+    "username": "admin",
+    "email": "muhsupriazis@gmail.com",
     "password": "admin",
     "confirm": "admin"
 }
 
 ###
-DELETE  http://localhost:5000/api/user/635690ae0873e654c20d0640
+DELETE  http://localhost:5000/api/user/63569e8f5fbcf6926dca579e
 
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
 
+{
+    "username": "admin",
+    "password": "admin"
+}
+###
+GET http://localhost:5000/api/auth/token
+
+###
+DELETE  http://localhost:5000/api/auth/logout
