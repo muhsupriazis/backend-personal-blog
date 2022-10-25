@@ -1,4 +1,4 @@
-import User from '../modules/UserModule.js'
+import User from '../models/UserModel.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 export const getUser = async(req, res)=>{

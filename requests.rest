@@ -1,6 +1,6 @@
 
 GET http://localhost:5000/api/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU2YjFkMjMzY2IwYTkxZmJmNGQ4YTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtdWhzdXByaWF6aXNAZ21haWwuY29tIiwiaWF0IjoxNjY2NjI4ODI2LCJleHAiOjE2NjY2Mjg4NDF9.nbsczEZoaIIq7q_kxovA-5LujWe_J0tLmZWBoO6nM3o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU4MDA4YWY5NzdlZTBiNTgzYjlhN2YiLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtdWhzdXByaWF6aXNAZ21haWwuY29tIiwiaWF0IjoxNjY2NzExODMyLCJleHAiOjE2NjY3MTE4NDd9.Y1fYeBYtoi0Jd9TGbYdv3B1qBuW8-tgJ0VO52x24hZs
 ###
 POST http://localhost:5000/api/user
 Content-Type: application/json
@@ -33,6 +33,8 @@ DELETE  http://localhost:5000/api/auth/logout
 GET  http://localhost:5000/api/portfolios
 ###
 POST   http://localhost:5000/api/portfolios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU4MDA4YWY5NzdlZTBiNTgzYjlhN2YiLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtdWhzdXByaWF6aXNAZ21haWwuY29tIiwiaWF0IjoxNjY2NzExODc4LCJleHAiOjE2NjY3MTE4OTN9._d2FBNrIUwrtDP-9P__d8dblNrQbcoUMuP-iprgqhoQ
+
 Content-Type: application/json
 
 {
@@ -61,7 +63,13 @@ DELETE http://localhost:5000/api/portfolios/635736acf7fd6629858a184b
 ###
 GET  http://localhost:5000/api/blogs
 ###
+
+###
+GET http://localhost:5000/api/auth/token
+###
 POST   http://localhost:5000/api/blogs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzU4MDA4YWY5NzdlZTBiNTgzYjlhN2YiLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtdWhzdXByaWF6aXNAZ21haWwuY29tIiwiaWF0IjoxNjY2NzExOTYzLCJleHAiOjE2NjY3MTE5Nzh9.bBCSK4cht1nSR5A_z0PWtRz4_MJZbYAXPzc6wc6dWdk
+
 Content-Type: application/json
 
 {
@@ -72,10 +80,10 @@ Content-Type: application/json
     "body": "body"
 }
 ###
-GET  http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3
+GET  http://localhost:5000/api/blogs/6357ff329c9c83c8aa570ddb
 
 ###
-PATCH http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3
+PATCH http://localhost:5000/api/blogs/6357ff329c9c83c8aa570ddb
 Content-Type: application/json
 
 {
@@ -87,4 +95,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3
+DELETE http://localhost:5000/api/blogs/6357ff329c9c83c8aa570ddb

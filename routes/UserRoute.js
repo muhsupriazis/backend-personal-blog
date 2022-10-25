@@ -4,5 +4,5 @@ import { verifyToken } from '../middlewares/VerifyToken.js'
 const router = express.Router()
 router.get('/', verifyToken, getUser)
 router.post('/', postUser)
-router.delete('/:id', deleteUser)
+router.delete('/:id', verifyToken, deleteUser)
 export default router
