@@ -1,10 +1,11 @@
 import mongoose, { Schema } from 'mongoose'
 const portfolioSchema = new Schema({
-    companyName: String,
+    name: String,
     description: String,
     tools: Array,
     github : String,
     deploy: String,
+    imgName: String,
     imgUrl: String
 })
 const Portfolio = mongoose.model('portfolio', portfolioSchema)
