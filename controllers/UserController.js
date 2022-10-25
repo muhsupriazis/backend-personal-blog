@@ -17,6 +17,10 @@ export const getUser = async(req, res)=>{
 }
 export const postUser = async (req, res)=>{
     try {
+        const count = (await User.find())
+        if(count.length > 1) return res.status(500).json({
+            message: 'Cannot register again'
+        })
         if(req.body.password != req.body.confirm) return res.status(400).json({
             message: 'Confirm failed'
         })
