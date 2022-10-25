@@ -58,3 +58,33 @@ Content-Type: application/json
 ###
 DELETE http://localhost:5000/api/portfolios/635736acf7fd6629858a184b
 
+###
+GET  http://localhost:5000/api/blogs
+###
+POST   http://localhost:5000/api/blogs
+Content-Type: application/json
+
+{
+    "title": "hello",
+    "summary": "sumary",
+    "slug": "slug",
+    "author": "author",
+    "body": "body"
+}
+###
+GET  http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3
+
+###
+PATCH http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3
+Content-Type: application/json
+
+{
+    "title": "hello1",
+    "summary": "sumary1",
+    "slug": "slug1",
+    "author": "author1",
+    "body": "body1"
+}
+
+###
+DELETE http://localhost:5000/api/blogs/6357fccf8b4c7ce151a959a3

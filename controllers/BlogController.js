@@ -1,49 +1,35 @@
-import Blog from '../models/BlogModel.js'
-
-export const getAllBlogs = async (req, res)=>{
+import Blog from "../modules/BlogModule.js"
+export const getBlogs = async (req, res)=>{
     try {
         const blogs = await Blog.find()
-        if(blogs.length < 1){
-            throw Error(404)
-        }
+        if(blogs.length < 1) return res.status(404).json({
+            message: 'Data empty'
+        })
         res.status(200).json(blogs)
     } catch (error) {
-        if(error.message == 404){
-            res.status(404).json({
-                message: `Data not found`
-            })
-        }
         res.status(500).json({
-            message: `Server problemed`
+            message: error.message
         })
     }
 }
-
-export const getDataById = async (req, res)=>{
+export const getBlog = async (req, res)=>{
     try {
         const blog = await Blog.findById({_id : req.params._id})
-        if(blog.length < 1){
-            throw Error(404)
-        }
+        if(!blog) return res.status(404).json({
+            message: 'Blog not found'
+        })
         res.status(200).json(blog)
     } catch (error) {
-        if(error.message == 404){
-            res.status(404).json({
-                message: `Data not found`
-            })
-        }
-        console.log(error)
+        res.status(500).json({
+            message: error.message
+        })
     }
 }
-
-export const addNewBlog = async (req, res)=>{
+export const postBlog = async (req, res)=>{
     try {
+        const {title, summary, slug, author, body} = req.body
         const blog = new Blog({
-            title: req.body.title,
-            slug: req.body.slug,
-            author: req.body.author,
-            body: req.body.body,
-            published: req.body.published,
+            title, summary, slug, author, body
         })
         await blog.save()
         res.status(201).json({
@@ -51,33 +37,47 @@ export const addNewBlog = async (req, res)=>{
         })
     } catch (error) {
         res.status(500).json({
-            message: 'Something wrong when save data'
+            message: error.message
         })
     }
 }
-
-export const updateBlogById = async (req, res)=>{
+export const updateBlog = async (req, res)=>{
     try {
-        await Blog.updateOne({_id: req.params._id}, {$set: req.body})
+        const blog = await Blog.findById({_id : req.params._id})
+        if(!blog) return res.status(404).json({
+            message: 'Blog not found'
+        })
+        const {title, summary, slug, author, body} = req.body
+        await Blog.updateOne({_id: req.params._id}, {
+            title,
+            summary,
+            slug,
+            author,
+            body
+        })
         res.status(202).json({
             message: 'Successfully updated data'
         })
     } catch (error) {
         res.status(500).json({
-            message: 'Something wrong when updated data'
+            message: error.message
         })
     }
 }
 
-export const deleteBlogById = async (req, res)=>{
+export const deleteBlog= async (req, res)=>{
     try {
+        const blog = await Blog.findById({_id : req.params._id})
+        if(!blog) return res.status(404).json({
+            message: 'Blog not found'
+        })
         await Blog.deleteOne({_id: req.params._id})
         res.status(202).json({
             message: 'Successfully deleted data'
         })
     } catch (error) {
         res.status(500).json({
-            message: 'Somthing wrong when deleted data'
+            message: error.message
         })
     }
 }

@@ -1,12 +1,9 @@
 import express from 'express'
-import { addNewBlog, deleteBlogById, getAllBlogs, getDataById, updateBlogById } from '../controllers/BlogController.js'
-
+import { deleteBlog, getBlog, getBlogs, postBlog, updateBlog } from '../controllers/BlogController.js'
 const router = express.Router()
-
-router.get('/', getAllBlogs)
-router.get('/:_id', getDataById)
-router.post('/', addNewBlog)
-router.patch('/:_id', updateBlogById)
-router.delete('/:_id', deleteBlogById)
-
+router.get('/', getBlogs)
+router.get('/:_id', getBlog)
+router.post('/', postBlog)
+router.patch('/:_id', updateBlog)
+router.delete('/:_id', deleteBlog)
 export default router
