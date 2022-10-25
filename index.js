@@ -9,6 +9,7 @@ import routerUser from './routes/UserRoute.js'
 import routerAuth from './routes/AuthRoute.js'
 import routerPortfolio from './routes/PortfolioRoute.js'
 import routerBlog from './routes/BlogRoute.js'
+import routerCertificate from './routes/CertificateRoute.js'
 dotenv.config()
 mongoose.connect(`mongodb://${process.env.MONGO_HOST}/${process.env.DB_NAME}`)
 .then(()=>console.log(`database connected`))
@@ -23,6 +24,7 @@ app.use('/api/auth', routerAuth)
 app.use('/api/user', routerUser)
 app.use('/api/portfolios', routerPortfolio)
 app.use('/api/blogs', routerBlog)
+app.use('/api/certificates', routerCertificate)
 app.listen(process.env.PORT, ()=>{
     console.log(`application running in http://localhost:${process.env.PORT}/api`)
 })
